@@ -25,6 +25,7 @@ services:
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+      - ./logstash/scripts:/usr/share/logstash/scripts
     ports:
       - "5000:5000"
       - "9600:9600"
@@ -48,6 +49,22 @@ services:
       - elk
     depends_on:
       - elasticsearch
+
+# docker run \
+#   --mount type=bind,source="$(pwd)"/filebeat.yml,target=/usr/share/filebeat/filebeat.yml \
+#   docker.elastic.co/beats/filebeat:6.4.0
+
+#  filebeat:
+#    build:
+#      context: filebeat/
+#      args:
+#        ELK_VERSION: $ELK_VERSION
+#    volumes:
+#      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml 
+#    networks:
+#      - elk
+#    depends_on:
+#      - elasticsearch
 
 networks:
 

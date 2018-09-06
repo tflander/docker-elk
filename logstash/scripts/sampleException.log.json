@@ -1,0 +1,3 @@
+{"traceId":"traceId1234","instance":"main","level":"INFO","logger":"todd.spike.SlfSpike","eventType":"event","message":"foo","threadId":1,"firstName":"Dorothy","environment":"local dev","stepName":"step","host":null,"action":"action","vin":"vin1234","applicationId":"appId"}
+
+
